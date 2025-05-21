@@ -97,6 +97,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": "amazon_prime_titles.csv",
 						"fileSystem": "pbodwhcontainer"
 					},
 					"columnDelimiter": ",",
