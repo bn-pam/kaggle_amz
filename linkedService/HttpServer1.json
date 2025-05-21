@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/bn-pam",
+			"url": "https://raw.githubusercontent.com/bn-pam/kaggle_amz/refs/heads/main/amazon_prime_titles.csv",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
