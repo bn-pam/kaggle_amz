@@ -1,0 +1,9 @@
+{
+	"name": "pbodwhdatafactory",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4777f6b7-6bc2-4968-a16f-df61b266913f",
+		"tenantId": "f6692c4e-06b5-4b04-b29e-2df99488ac33"
+	}
+}
