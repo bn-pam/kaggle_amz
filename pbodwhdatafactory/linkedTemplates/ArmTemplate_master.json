@@ -1,0 +1,63 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nom de fabrique de données",
+			"defaultValue": "pbodwhdatafactory"
+		},
+		"pboconnexiongithubadsl2_accountKey": {
+			"type": "secureString",
+			"metadata": "Chaîne sécurisée pour « accountKey » de « pboconnexiongithubadsl2 »"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/bn-pam/kaggle_amz/refs/heads/main/amazon_prime_titles.csv"
+		},
+		"pboconnexiongithubadsl2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pbodwh.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI pour le compte de stockage contenant des modèles ARM liés"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Jeton SAS pour le compte de stockage contenant des modèles ARM liés"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "pbodwhdatafactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"pboconnexiongithubadsl2_accountKey": {
+						"value": "[parameters('pboconnexiongithubadsl2_accountKey')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"pboconnexiongithubadsl2_properties_typeProperties_url": {
+						"value": "[parameters('pboconnexiongithubadsl2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
