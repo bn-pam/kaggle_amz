@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/bn-pam/",
+			"url": "https://github.com/bn-pam",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
